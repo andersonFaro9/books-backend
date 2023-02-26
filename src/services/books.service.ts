@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 
 import { PrismaService } from '../services/prisma.service';
 import { BooksDto } from './../booksDto/books.dto';
@@ -8,25 +8,26 @@ export class BooksService {
   constructor(private prisma: PrismaService) {}
 
   async create(data: BooksDto) {
-    const booksExists = await this.prisma.book.findFirst({
+    const barCodeExist = await this.prisma.book.findFirst({
       where: {
         bar_code: data.bar_code,
       },
     });
 
-    if (booksExists) {
-      throw new Error('Book exist');
+    if (barCodeExist) {
+      throw new UnprocessableEntityException('bar code já cadastrado');
     }
 
     const books = await this.prisma.book.create({
       data,
     });
-
     return books;
   }
 
   async findAll() {
-    return this.prisma.book.findMany();
+    const books = await this.prisma.book.findMany();
+    console.log(books);
+    return books;
   }
   async update(id: string, data: BooksDto) {
     const booksExists = await this.prisma.book.findUnique({

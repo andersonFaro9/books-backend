@@ -1,5 +1,5 @@
 export class BooksDto {
-  id?: string;
+  id: string;
   title: string;
   description: string;
   year: string;
