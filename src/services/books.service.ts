@@ -23,6 +23,18 @@ export class BooksService {
     });
     return books;
   }
+  async findOne(id: string) {
+    console.log(id);
+    const books = await this.prisma.book.findUnique({
+      where: { id: String(id) },
+    });
+
+    if (!books) {
+      throw new Error('details does  not exists');
+    }
+    return books;
+  }
+  //TODO -> // https://blog.logrocket.com/how-to-use-nestjs-prisma/
 
   async findAll() {
     const books = await this.prisma.book.findMany();

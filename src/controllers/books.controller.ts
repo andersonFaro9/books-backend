@@ -7,6 +7,7 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { Book } from '@prisma/client';
 import { BooksDto } from 'src/booksDto/books.dto';
 
 import { BooksService } from '../services/books.service';
@@ -22,6 +23,11 @@ export class BooksController {
   @Get()
   async findAll() {
     return this.booksService.findAll();
+  }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return this.booksService.findOne(id);
   }
 
   @Put(':id')
