@@ -34,7 +34,6 @@ export class BooksService {
     }
     return books;
   }
-  //TODO -> // https://blog.logrocket.com/how-to-use-nestjs-prisma/
 
   async findAll() {
     const books = await this.prisma.book.findMany();
