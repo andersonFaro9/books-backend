@@ -24,14 +24,18 @@
 
 ## Descrição
 
-Api desenvolvida com framework NestJs [Nest](https://github.com/nestjs/nest) e o orm Prisma.io para prática e aprendizado. Ela traz uma lista de livros fictícios. O front-end foi criado com React Js e Nextjs e pode ser visto por esse
-[respositório](https://github.com/andersonFaro9/books-frontend)
+Api desenvolvida com framework [Nest](https://github.com/nestjs/nest) e o orm Prisma.io para prática e aprendizado. Ela traz uma lista de livros fictícios. O front-end foi criado com React Js e Nextjs e pode ser visto por esse [link](https://github.com/andersonFaro9/books-frontend)
 
 ## Instalação
 
 ```bash
 $ npm install
 ```
+## Exemplo:
+
+![print_git](https://user-images.githubusercontent.com/3237047/224555740-720cba71-31b1-41c8-9da9-bb4e43fd9008.png)
+
+![print2](https://user-images.githubusercontent.com/3237047/224555918-dd8bb819-ac07-4556-b3e1-a785a76fa735.png)
 
 ## Rodando o app
 
